@@ -1,0 +1,9 @@
+<?php $this->headTitle()->append('Your referrals'); ?>
+<h1>Here are your referrals</h1>
+<ol>
+<?php 
+	foreach ($this->referrals as $referral) { 
+		echo '<li class="lispacer"><b>First Name: </b>' . $referral->first_name . ' <b>Last Name: </b>' . $referral->last_name . ' <b>Username: </b>' . $referral->username . '</li>';
+	}
+?>
+</ol>

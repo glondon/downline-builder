@@ -1,0 +1,16 @@
+<?php $this->headTitle()->append('Forgot Username'); 
+if ($this->escape($this->submitted)) { ?>
+<h1>Your username has been sent</h1>
+<p>Your username has been sent to your account email address.</p> 
+
+<?php } else { ?>
+
+<fieldset>
+<legend>Forgot Username</legend>
+<?php if ($this->matchPass) { ?>
+<p style="color:red;"><?php echo $this->matchPass ?></p>
+<?php } echo $this->form; ?>
+<p align="right"><a href="/forgotpasswd" title="Click here if you forgot your password.">Can't remember your password?</a>
+</fieldset>
+
+<?php } ?> 

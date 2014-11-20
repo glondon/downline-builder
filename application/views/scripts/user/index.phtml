@@ -1,0 +1,14 @@
+<?php 
+$this->headTitle()->append('Your account');
+$this->headMeta()->appendName('description', 'A downlinebuilder for sign up bonus websites'); 
+$this->headMeta()->appendName('keywords', 'account, sign up bonus, downline builder');
+if ($this->identity == null) { ?>
+<h1>Sign up for an account</h1>
+<p>Bla, bla, bla... <?php echo $this->escape($this->refid) ?></p>
+
+<?php } else { ?>
+<p>Welcome back <?php echo $this->escape($this->identity->first_name) ?>, 
+your user id is: <?php echo $this->escape($this->identity->user_id) ?></p>
+<p>Your referral Url is: <a href="<?php echo $this->escape($this->url) ?>/ref/<?php echo $this->escape($this->identity->username) ?>" target="_blank">
+<?php echo $this->escape($this->url) ?>/ref/<?php echo $this->escape($this->identity->username) ?></a></p>
+<?php } ?>

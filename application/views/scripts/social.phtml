@@ -1,0 +1,8 @@
+<?php 
+
+foreach ($this->refProfile() as $rprofile) { ?>
+
+<div align="center" style="padding-left:30px;"><br /><a href="<?php if ($rprofile->blog != '') { echo $rprofile->blog; } else { echo 'http://www.signupandmakemoney.com/blog/'; } ?>" target="_blank" title="Subscribe to our blog!"><img src="http://www.signupandmakemoney.com/Assets/rss-large.jpg" alt="Signupandmakemoney RSS feed." width="100" height="100" border="0" style="padding-right:20px;" /></a><a href="https://www.facebook.com/<?php if ($rprofile->facebook != '') { echo $rprofile->facebook; } else { echo 'signupmoney'; } ?>" target="_blank" title="Like us at Facebook!"><img src="http://www.signupandmakemoney.com/Assets/facebook-large.png" alt="Like us on Facebook." width="100" height="100" border="0" style="padding-right:20px;" /></a><a href="http://twitter.com/<?php if ($rprofile->twitter != '') { echo $rprofile->twitter; } else { echo 'signupmakemoney'; } ?>" target="_blank" title="Follow us on Twitter!">
+    <img src="http://www.signupandmakemoney.com/Assets/Twitter-large.png" alt="Follow us on Twitter." width="100" height="100" border="0" style="padding-right:20px;" /></a><a href="http://www.signupandmakemoney.com/site/affiliates/signup.php#SignupForm" title="Become a Signupandmakemoney affiliate."><img src="http://www.signupandmakemoney.com/Assets/affiliate-icon.png" alt="Become a Signupandmakemoney affiliate." width="100" height="100" border="0" /></a>
+	
+	<?php } ?>

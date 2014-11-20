@@ -1,0 +1,13 @@
+<?php $this->headTitle()->append('Contact admin'); 
+$this->headMeta()->appendName('description', 'Contact the sign up bonus downline builder admin.'); 
+$this->headMeta()->appendName('keywords', 'contact, admin');
+if ($this->escape($this->submitted)) { ?>
+<h2>Thanks for your inquiry</h2>
+<p>We'll get back with you shortly.</p>
+<?php } else { ?>
+<fieldset>
+<legend>Contact Us</legend>
+<?php echo $this->form; ?>
+</fieldset>
+<p>If you have a question or need help with anything, just let us know.</p>
+<?php } ?>

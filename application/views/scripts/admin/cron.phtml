@@ -1,0 +1,24 @@
+<?php $this->headTitle()->append('Cron it baby!!'); 
+$this->headMeta()->appendName('description', 'Send out reminders and other stuff.'); 
+$this->headMeta()->appendName('keywords', 'cron'); ?>
+
+<h1>Cron Some Stuff</h1>
+
+<?php if ($this->monthReminder) { ?>
+
+<p><b><?php echo $this->sent ?></b> monthly reminders have been sent.</p>
+
+<?php } elseif ($this->noMonth) { ?>
+
+<p>No month reminders have been sent.</p>
+
+<?php } else { ?>
+
+<fieldset>
+<legend>Month Reminder</legend>
+<p>There are currently <b><?php echo $this->needIt ?></b> members that haven't logged in at least a month ago.</p>
+<?php echo $this->form; ?>
+
+</fieldset>
+
+<?php } ?>

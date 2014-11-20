@@ -1,0 +1,21 @@
+<?php $this->headTitle()->append('Forgot Password'); 
+if ($this->escape($this->submitted)) { ?>
+<h1>New password has been sent</h1>
+<p>A password has been sent to your account email address containing your new password.</p> 
+<p>You may update your password to something more memorable after you log in.</p>
+
+<?php } else { ?>
+
+<fieldset>
+<legend>Forgot Password</legend>
+<?php if ($this->matchEmail) { ?>
+<p style="color:red;"><?php echo $this->matchEmail ?></p>
+<?php }
+
+	echo $this->form; 
+	
+?>
+<p>Note: This will generate a new password that you can change later. <br /><a href="/forgotusername" title="Click here if you can't remember your username.">Forgot your username?</a></p>
+</fieldset> 
+
+<?php } ?>

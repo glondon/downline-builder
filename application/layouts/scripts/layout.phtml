@@ -1,0 +1,240 @@
+<?php define('URL', 'http://www.signupandmakemoney.com/'); ?>
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <?php 
+  	echo $this->headTitle();
+  	echo $this->headMeta();
+   	?>
+  <link href="/css/styles.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="<?php echo $this->escape($this->canonical) ?>" />
+  <link rel="shortcut icon" href="<?php echo URL ?>Assets/transparent.ico" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/scripts.js"></script>
+</head>
+<body>
+<!--
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=APP_ID";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '223751357754052',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>
+
+
+<div id="top">
+<table style="margin: 0 auto;"><tr><td width="630px">
+<div class="navtop">
+  <ul> 
+    <li><a href="<?php echo URL ?>">Bonuses</a></li> 
+    <li><a href="<?php echo URL ?>site/affiliates/login.php">Affiliates</a></li> 
+	<li class="currentp"><a href="<?php echo URL ?>builder/">Builder</a></li>
+    <li><a href="<?php echo URL ?>forum/">Forum</a></li> 
+    <li><a href="<?php echo URL ?>blog/">Blog</a></li>
+    <li><a href="<?php echo URL ?>traffic/">Traffic</a></li>
+    <li><a href="<?php echo URL ?>affiliate-tips/">Tips</a></li>
+  </ul> </div></td><td width="330px">
+  <div class="search">
+	<form action="http://www.signupandmakemoney.com/google-search/" id="cse-search-box">
+    <input type="hidden" name="cx" value="partner-pub-0372492470050030:5vvp50-qsag" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="30" />
+    <!-- input type="submit" name="sa" value="Search" / -->
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+</div>	
+</td>
+</tr>
+</table>
+</div>
+<div id="wrapper">
+<table width="100%" border="0" cellspacing="2" cellpadding="2" summary="table for header">
+  <tr>
+    <td class="header"><a href="http://www.signupandmakemoney.com/" style="background:none;"><img src="<?php echo URL ?>Assets/signupandmakemoney-logo-lg.jpg" border="0" alt="Signupandmakemoney Logo" title="Signupandmakemoney." width="300" height="67" /></a></td>
+    
+    <td class="banner_right">
+    
+     <?php echo $this->layout()->hbanner ?>
+    
+    </td>
+    
+  </tr>
+</table>
+<div id="tophmenu"></div>
+<div id="hmenu">
+
+
+			<ul>
+			
+<?php if ($this->identity == null || $this->identity->role == 'inactive' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'ref' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'register') { ?>
+<li class="page_item page-item-1"><a href="/register">Register</a></li>
+<li class="page_item page-item-2"><a href="/login">Login</a></li>
+
+<?php } else if ($this->identity !== null && $this->identity->role == 'admin') { ?>
+<li class="page_item page-item-1"><a href="/admin">Admin</a></li>
+<li class="page_item page-item-1"><a href="/admin/cron">Cron</a></li>
+<li class="page_item page-item-2"><a href="/user/profile">Profile</a></li>
+<li class="page_item page-item-3"><a href="/user/logout">Logout</a></li>
+<?php } else { ?>
+
+<li class="page_item page-item-1"><a <?php if (Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'index') { echo 'class="active"'; } ?> href="/user">Home</a></li>
+<li class="page_item page-item-2"><a <?php if (Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'profile') { echo 'class="active"'; } ?> href="/user/profile">Profile</a></li>
+<li class="page_item page-item-3"><a <?php if (Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'preview') { echo 'class="active"'; } ?> href="/user/preview">Builder</a></li>
+<li class="page_item page-item-4"><a <?php if (Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'contact') { echo 'class="active"'; } ?> href="/user/help">Help</a></li>
+<li class="page_item page-item-5"><a href="/user/logout">Logout</a></li>
+<?php } ?>
+			
+			</ul>
+</div>		
+
+<div id="content">
+
+<?php echo $this->layout()->content ?>
+
+</div>
+<div id="sidebar">
+<?php echo $this->layout()->sidebar ?>
+</div>
+<div class="clear"></div>
+
+</div> <!-- closes the wrapper tag -->
+
+<div id="footer">
+
+<div id="footercontent">
+<p align="center">
+<?php echo $this->layout()->lbanner ?>
+
+
+ <br /><br /><br /></p>
+    
+    <table width="100%" border="0" cellspacing="2" cellpadding="5" summary="Table for footer.">
+  <tr>
+    <td colspan="2" class="whitespace">
+	<?php echo $this->layout()->social ?>
+	<br /><br /><br /><div class="fb-like" data-href="http://www.signupandmakemoney.com" data-send="true" data-width="450" data-show-faces="false"></div>
+          <br /><br />
+      <table align="center" cellpadding="8" cellspacing="30" border="0" width="600px"><tr><td><div align="center">   
+    <div class="fb-like-box" data-href="https://www.facebook.com/signupmoney" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div></div></td><td style="padding-left:15px;"><script type="text/javascript" language="JavaScript" src="http://twittercounter.com/embed/signupmakemoney/ffffff/111111"></script><br /><a href="http://feeds.feedburner.com/signupandmakemoney/haHu" target="_blank"><img src="http://feeds.feedburner.com/~fc/signupandmakemoney/haHu?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0;" /></a></td></tr><tr><td><br /><div align="center"><?php echo $this->layout()->banner2 ?></div></td>
+    <td style="padding-left:15px;"><a class="addthis_button" href="http://addthis.com/bookmark.php?v=250&amp;pub=gdc25"><img src="http://s7.addthis.com/static/btn/v2/lg-bookmark-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0; padding-bottom:0px;margin-bottom:0px;"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=gdc25"></script><br /><br /><div id="google_translate_element"></div><script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></td></tr></table><br />
+    </div></td>
+  </tr>
+  <tr>
+    <td colspan="2"><br /><br /><h3 align="center">Signupandmakemoney Downline Builder</h3>
+    <br /><br /></td>
+  </tr>
+  <tr>
+    <td width="50%"><div align="center" class="side">
+    <ul>
+    	<li><a href="<?php echo URL ?>info/earnings-disclaimer.html">Earnings Disclaimer</a></li>
+        <li><a href="<?php echo URL ?>info/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="<?php echo URL ?>info/signupandmakemoney-instructions.html">Instructions</a></li>
+        <li><a href="<?php echo URL ?>sitemap.html">Sitemap</a></li>
+   	    <li><a href="<?php echo URL ?>contact/">Contact</a></li>
+        <li><a href="<?php echo URL ?>info/faq.html">FAQ</a></li>
+    </ul>  
+    </div></td>
+    <td width="50%" rowspan="2"><div align="center"><img src="<?php echo URL ?>Assets/signupandmakemoney-logo-lg-transparent.gif" alt="Signupandmakemoney Logo" width="300" height="67" /></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><br /><br /><p>Copyright &copy; 2008 - <?php echo date('Y'); ?> Signupandmakemoney, LLC</p></div></td>
+  </tr>
+</table>
+
+</div> <!-- closes the footercontent tag -->
+
+</div> <!-- closes the footer tag -->
+
+</body>
+</html>

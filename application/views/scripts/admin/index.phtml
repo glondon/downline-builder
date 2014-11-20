@@ -1,0 +1,9 @@
+<?php $this->headTitle()->append('Administration'); ?>
+<h1>Admin Area</h1>
+
+<?php
+foreach ($this->users as $key => $value)
+{
+	echo $value->user_id .' with username '. $value->username .' and email '. $value->email .'<br/>';
+}
+?>

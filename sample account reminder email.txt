@@ -1,0 +1,20 @@
+sample login reminder email
+
+
+
+Hello Gregory,
+
+Thank you for joining WordLinx, however our system shows you have not logged in recently.
+
+Please keep your account active by logging in regularly, otherwise it may be deleted.
+
+If you no longer require your account, please login and click 'My Account' then 'Delete Account'.
+
+To unsubscribe from reminders like this, please login and update your profile.
+
+Please DO NOT reply to this automated message. If you require assistance, please use our Support form.
+
+Regards,
+
+The WordLinx Team.
+http://www.wordlinx.com

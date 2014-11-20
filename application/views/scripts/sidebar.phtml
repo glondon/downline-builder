@@ -1,0 +1,89 @@
+<ul>
+<?php if ($this->identity == null || $this->identity->role == 'inactive' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'ref' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'register') { ?>
+
+<li>
+<h2>Why Join?</h2>
+<div>
+<ul>
+<li>* Tons of free bonuses just for joining.</li>
+<li>* These sites have been proven to pay.</li>
+<li>* You don't need a website to build this.</li>
+<li>* All your sign up bonus referral links in one spot.</li>
+<li>* Everyone you refer joins through your referral links.</li>
+<li>* Total Members: <b><?php echo $this->userCount() ?></b>, and growing!!!</li>
+<li>* Etc...</li>
+</ul>
+</div>
+</li>
+
+<li>
+<h2>Newest Members</h2>
+<div>
+<ul>
+<?php foreach ($this->newMembers() as $member) { 
+	$dateJoined = $member->ts_created;
+	$zdate = new Zend_Date();
+	$zdate->set($dateJoined, 'dd-MM-YYYY');
+	$finishDate = substr($zdate, 0,12);
+	echo '<li><b>' . $member->username . '</b>, joined on <b>' . $finishDate . '</b>.</li>';
+	}
+?>
+</ul>
+</div>
+</li>
+
+<?php } else { ?>
+<li>
+<h2>Join These $$$</h2>
+<div>
+<ul>
+<?php foreach($this->refIds() as $referral) {?>
+<li><a class="tooltip" href="http://www.sendearnings.com/?r=
+<?php if ($referral->sendearnings == '') { echo 'ref271274'; } else { echo $this->escape($referral->sendearnings); } ?>" target="_blank" title="Join Sendearnings for free here. You can earn all kinds of money clicking on ads and such.<br /><br />Don't believe me? Well try it for yourself.">
+Sendearnings</a> = $5.00 bonus</li>
+<li><a class="tooltip" href="http://www.inboxdollars.com/?r=
+<?php if ($referral->inboxdollars == '') { echo 'ref948156'; } else { echo $this->escape($referral->inboxdollars); } ?>" target="_blank" title="Join Inboxdollars for free here.">
+Inboxdollars</a> = $5.00 bonus</li>
+<li><a class="tooltip" href="http://hits4pay.com/members/index.cgi?
+<?php if ($referral->hits4pay == '') { echo 'gdc25'; } else { echo $this->escape($referral->hits4pay); } ?>" target="_blank" title="Join Hits4Pay free here.">
+Hits4pay</a> = $5.00 bonus</li>
+<li><a class="tooltip" href="http://www.uniquerewards.com/cgi-bin/main.cgi?cmd=newref&refid=<?php if ($referral->uniquerewards == '') { echo '9440'; } else { echo $this->escape($referral->uniquerewards); } ?>" target="_blank" title="Join Unique Rewards for free here.">
+Unique Rewards</a> = $5.00 bonus</li>
+<li><a class="tooltip" href="http://www.clixsense.com/?<?php if ($referral->clixsense == '') { echo '2251204'; } else { echo $this->escape($referral->clixsense); } ?>" target="_blank" title="Join Clixsense for free here.">
+Clixsense</a> = $0.00 bonus</li>
+<li><a class="tooltip" href="https://www.surveysavvy.com/?m=<?php if ($referral->surveysavvy == '') { echo '2450703'; } else { echo $this->escape($referral->surveysavvy); } ?>" target="_blank" title="Join Survey Savvy for free here.">Survey Savvy</a> = $0.00 bonus</li>
+<?php } ?>
+</ul>
+</div>
+</li>
+
+<li>
+<h2>Your Info</h2>
+<div>
+<ul>
+<li>Username: <em><b><?php echo $this->escape($this->identity->username); ?></b></em></li>
+<li>Email: <em><b><?php echo $this->escape($this->identity->email); ?></b></em></li><br />
+<li>Referral Url: <br /><a style="font-size:10px;" href="http://paidtosignup/ref/<?php echo $this->identity->username; ?>" target="_blank">
+paidtosignup/ref/<?php echo $this->identity->username; ?></a></li>
+<li><a style="font-size:10px;" href="/user/banners">Get more banners & links.</a></li>
+<?php if ($this->identity->role !== 'upgraded' && Zend_Controller_Front::getInstance()->getRequest()->getActionName() !== 'upgrade') { ?>
+<li>You're not an upgraded member yet and are missing out on higher commissions. <a style="font-size:1.2em;" href="/user/upgrade">Upgrade your membership today!!!</a></li>
+<?php } ?>
+</ul>
+</div>
+</li>
+
+<li>
+<h2>Your Stats</h2>
+<div>
+<ul>
+<?php if ($this->refCount() == 0) { echo '<li><b>You have no referrals yet.</b></li>'; } else { 
+	echo '<li>Referral count: <b>' . $this->escape($this->refCount()) . 
+	'</li><li></b> <a href="/user/referrals">View your referral(s)</a>'; } ?></li>
+	<li>You were referred by: <b><?php if ($this->escape($this->ref()) == '') { echo 'Nobody.'; } else { echo $this->escape($this->ref()); } ?></b></li>
+</ul>
+</li>
+
+<?php } ?>
+
+</ul>

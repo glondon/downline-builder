@@ -1,0 +1,21 @@
+<?php $this->headTitle()->append('Contact us'); 
+$this->headMeta()->appendName('description', 'Contact us if you have any questions about the make money program.'); 
+$this->headMeta()->appendName('keywords', 'contact, program'); 
+if ($this->submitted) {
+?>
+<h1>Thank you for contacting us</h1>
+
+<p>Your message has been sent and is important to us.</p> 
+<p>We will respond to your inquiry shortly.</p>
+
+<?php } else { ?>
+
+<fieldset>
+<legend>Got a Question?</legend>
+
+<?php echo $this->form; ?>
+
+</fieldset>
+
+<?php } ?>
+

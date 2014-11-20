@@ -1,0 +1,36 @@
+<?php $this->headTitle()->append('Update your information'); 
+$this->headMeta()->appendName('description', 'Update your profile for the sign up bonus builder.'); 
+$this->headMeta()->appendName('keywords', 'update, profile');
+if ($this->escape($this->profileSubmitted)) { ?>
+
+<h1>Your profile has been updated</h1>
+
+<?php } else if ($this->escape($this->passwordSubmitted)) { ?>
+
+<h1>Your profile has been updated</h1>
+
+<?php } else { ?>
+<p class="profile"><?php echo $this->escape($this->first_name); ?>'s profile</p>
+<p>Username: <em><b><?php echo $this->escape($this->username); ?></b></em></p>
+<p>Email: <em><b><?php echo $this->escape($this->email); ?></b></em></p>
+<p>You've been a member since: <em><b><?php echo $this->escape($this->datejoined) ?></b></em></p>
+<?php if ($this->escape($this->ssn)) { ?>
+<p>SSN submitted: <em><b><?php echo $this->escape($this->ssn) ?></b></em></p>
+<?php } ?>
+
+<fieldset>
+<legend>Profile</legend>
+<?php echo $this->form; ?>
+</fieldset>
+
+<a href="#" name="faq-1" class="lispacer" style="display:block;height:20px;">Change your password</a>
+<div class="faq-answer" id="faq-1"><br />
+
+<fieldset>
+<legend>(Optional) Change your password</legend>
+<?php echo $this->passwdUpdate; ?>
+</fieldset>
+
+<br /><br /></div>
+
+<?php } ?>

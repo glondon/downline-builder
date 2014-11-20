@@ -1,0 +1,12 @@
+<?php $this->headTitle()->append('Account activation'); ?>
+<h2>Account Activation</h2>
+
+<?php if ($this->escape($this->false)) { ?>
+ <p>Sorry, but there was a problem with the email submitted.</p> 
+ <p>It probably doesn't exist.</p>
+ <?php } elseif ($this->escape($this->true)) { ?>
+ <p>Your account has already been activated, try to log in again.</p>
+ <?php } else { ?>
+	<p>Thank you. Your account has been confirmed and activated.</p>
+	<p>You can now log into your account.</p>
+<?php } ?>

@@ -1,0 +1,68 @@
+<?php $this->headTitle()->append('Downline Builder'); 
+$this->headMeta()->appendName('description', 'Sign up bonus sites and add your own custom links'); 
+$this->headMeta()->appendName('keywords', 'sign up bonus, sites, custom links'); 
+if ($this->escape($this->submitted)) { ?>
+<h1>Your Downline Builder has been updated</h1>
+
+<?php } elseif ($this->escape($this->customSubmit)) { ?>
+
+<h1>Your Custom Link has been updated</h1>
+
+<?php } else { ?>
+
+<ul>
+
+<li class="lispacer"><a href="#" name="faq-1">Update your builder</a>
+<div class="faq-answer" id="faq-1"><br />
+
+<fieldset>
+<legend>Downline Builder</legend>
+<?php echo $this->form; ?>
+</fieldset>
+
+<br /><br /></div></li>
+
+<?php if ($this->customError) { ?>
+<fieldset>
+<legend>Custom Link #1</legend>
+<?php echo $this->custom; ?>
+</fieldset>
+<?php } else { ?>
+<li class="lispacer"><a href="#" name="faq-2"><?php if ($this->identity->role !== 'upgraded') { echo 'Update your custom link'; } else { echo 'Update your 1st custom link'; } ?></a>
+<div class="faq-answer" id="faq-2"><br />
+
+<fieldset>
+<legend>Custom Link #1</legend>
+<?php echo $this->custom; ?>
+</fieldset>
+<?php if ($this->identity->role !== 'upgraded') { echo '<p style="margin-left:15px;">Note: You get more links when you upgrade!</p>'; } ?>
+<br /><br /></div></li>
+<?php } ?>
+
+<?php if ($this->identity->role == 'upgraded') { ?>
+
+<li class="lispacer"><a href="#" name="faq-3">Update your 2nd custom link</a>
+<div class="faq-answer" id="faq-3"><br />
+
+<fieldset>
+<legend>Custom Link #2</legend>
+<?php echo $this->custom2; ?>
+</fieldset>
+
+<br /><br /></div></li>
+
+<li class="lispacer"><a href="#" name="faq-4">Update your 3rd custom link</a>
+<div class="faq-answer" id="faq-4"><br />
+
+<fieldset>
+<legend>Custom Link #3</legend>
+<?php echo $this->custom3; ?>
+</fieldset>
+
+<br /><br /></div></li>
+
+<?php } ?>
+
+</ul>
+
+<?php } ?>

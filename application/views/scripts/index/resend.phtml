@@ -1,0 +1,10 @@
+<?php $this->headTitle()->append('Resending account activation email'); ?>
+<h2>Resend for account activation</h2>
+ <?php if ($this->escape($this->false)) { ?>
+ <p>Sorry, but there was a problem with the username submitted.</p> 
+ <p>It probably doesn't exist.</p>
+ <?php } elseif ($this->escape($this->true)) { ?>
+ <p>Your account has already been activated, try to log in again.</p>
+ <?php } else { ?>
+	<p>Thank you. Your confirmation email has been resent, please check your email inbox again to confirm and activate your account.</p>
+ <?php } ?>

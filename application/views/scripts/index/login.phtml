@@ -1,0 +1,35 @@
+<?php 
+$this->headTitle()->append('Log into your account');
+$this->headMeta()->appendName('description', 'A downlinebuilder for sign up bonus websites'); 
+$this->headMeta()->appendName('keywords', 'login, account');
+if ($this->alreadylogged) { ?>
+
+<h1><?php echo $this->escape($this->alreadylogged) ?></h1>
+
+<?php } else { ?>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<div align="center">
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+</div>
+
+<fieldset>
+<legend>Login</legend>
+<?php if ($this->loginMessage) { ?>
+<p style="color:red;"><?php echo $this->loginMessage ?></p>
+<?php }
+	echo $this->form; 
+?>
+<p style="padding:5px; margin-left:230px;">Already a member? <a href="/forgotpasswd"  title="Forgot your password.">Forgot Password</a></p>
+</fieldset>
+
+<?php } ?>

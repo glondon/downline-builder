@@ -1,0 +1,19 @@
+<?php $this->headTitle()->append('Make money today!'); 
+$this->headMeta()->appendName('description', 'Join this site to increase your income today.'); 
+$this->headMeta()->appendName('keywords', 'register, new account'); 
+
+if ($this->alreadylogged) {
+?>
+
+<p>Welcome back <?php echo $this->escape($this->identity->first_name) ?>.</p>
+
+<?php } else { ?>
+
+<p>Join today and reap the benefits of all the sign up bonuses!</p>
+<p>We've picked only the best free sign up bonus sites to join so you don't waste any of your time.</p>
+
+<?php } ?>
+
+
+
+
