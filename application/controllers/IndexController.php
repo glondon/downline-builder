@@ -1,5 +1,10 @@
 <?php
 
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class IndexController extends Zend_Controller_Action
 {
 	protected $user;

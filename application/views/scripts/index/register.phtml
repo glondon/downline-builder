@@ -1,8 +1,18 @@
-<?php $this->headTitle()->append('Speed up your earnings and register for an account');
-      $this->headMeta()->appendName('description', 'Register for an account with the sign up bonus downline builder.'); 
-	  $this->headMeta()->appendName('keywords', 'register, new account'); 
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Speed up your earnings and register for an account');
+$this->headMeta()->appendName('description', 'Register for an account with the sign up bonus downline builder.'); 
+$this->headMeta()->appendName('keywords', 'register, new account'); 
 	
- if ($this->escape($this->submitted)) { ?>
+if ($this->escape($this->submitted)) { 
+
+?>
+
 <h2>Thank you for your Registration to the Money Making website</h2>
 <p>Please check your email and click on the link to activate your account.</p>
 <?php } else { ?>

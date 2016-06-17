@@ -1,8 +1,18 @@
-<?php $this->headTitle()->append('Make money today!'); 
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Make money today!'); 
 $this->headMeta()->appendName('description', 'Join this site to increase your income today.'); 
 $this->headMeta()->appendName('keywords', 'register, new account'); 
 
- if ($this->escape($this->submitted)) { ?>
+ if ($this->escape($this->submitted)) { 
+
+?>
+
 <h2>Thank you for your Registration to the Money Making website</h2>
 <p>Please check your email and click on the link to activate your account.</p>
 <?php } else { ?>

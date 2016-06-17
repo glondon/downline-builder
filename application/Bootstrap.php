@@ -1,5 +1,10 @@
 <?php
 
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 	protected function _initAutoload()

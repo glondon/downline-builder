@@ -1,5 +1,9 @@
-// Checks the browser and adds classes to the body to reflect it.
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
 
+// Checks the browser and adds classes to the body to reflect it.
 $(document).ready(function(){
     
     var userAgent = navigator.userAgent.toLowerCase();

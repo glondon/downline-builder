@@ -1,4 +1,10 @@
 <?php
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Zend_View_Helper_LargeBanner extends Zend_View_Helper_Abstract
 {
 	public function LargeBanner()

@@ -1,4 +1,10 @@
 <?php
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Plugin_Email 
 {
 	const FROM_NAME  = 'Make Money Site';

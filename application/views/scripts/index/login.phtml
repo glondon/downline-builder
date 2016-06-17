@@ -1,8 +1,17 @@
 <?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 $this->headTitle()->append('Log into your account');
 $this->headMeta()->appendName('description', 'A downlinebuilder for sign up bonus websites'); 
 $this->headMeta()->appendName('keywords', 'login, account');
-if ($this->alreadylogged) { ?>
+
+if ($this->alreadylogged) { 
+
+?>
 
 <h1><?php echo $this->escape($this->alreadylogged) ?></h1>
 

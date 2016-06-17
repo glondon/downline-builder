@@ -1,4 +1,10 @@
 <?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Model_Builder extends Zend_Db_Table_Abstract
 {
 	protected $_name    = 'builder';	

@@ -1,5 +1,10 @@
 <?php
 
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class ErrorController extends Zend_Controller_Action
 {
 	public function preDispatch()

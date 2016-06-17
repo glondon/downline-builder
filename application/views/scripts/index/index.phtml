@@ -1,8 +1,16 @@
-<?php $this->headTitle()->append('Make money today!'); 
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Make money today!'); 
 $this->headMeta()->appendName('description', 'Join this site to increase your income today.'); 
 $this->headMeta()->appendName('keywords', 'register, new account'); 
 
 if ($this->alreadylogged) {
+
 ?>
 
 <p>Welcome back <?php echo $this->escape($this->identity->first_name) ?>.</p>

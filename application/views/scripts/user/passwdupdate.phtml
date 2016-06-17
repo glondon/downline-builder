@@ -1,8 +1,18 @@
-<?php $this->headTitle()->append('Update your information'); 
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Update your information'); 
 $this->headMeta()->appendName('description', 'Update your profile for the sign up bonus builder.'); 
 $this->headMeta()->appendName('keywords', 'update, profile');
+
 if ($this->escape($this->profileSubmitted)) {
+
 ?>
+
 <h1>Your profile has been updated</h1>
 <?php } else if ($this->escape($this->passwordSubmitted)) { ?>
 

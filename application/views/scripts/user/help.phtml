@@ -1,7 +1,18 @@
-<?php $this->headTitle()->append('Contact admin'); 
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Contact admin'); 
 $this->headMeta()->appendName('description', 'Contact the sign up bonus downline builder admin.'); 
 $this->headMeta()->appendName('keywords', 'contact, admin');
-if ($this->escape($this->submitted)) { ?>
+
+if ($this->escape($this->submitted)) { 
+
+?>
+
 <h2>Thanks for your inquiry</h2>
 <p>We'll get back with you shortly.</p>
 <?php } else { ?>

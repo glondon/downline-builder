@@ -1,4 +1,10 @@
 <?php
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Form_ForgotUsername extends Zend_Form
 {
 	public function init()

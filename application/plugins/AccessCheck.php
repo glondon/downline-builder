@@ -1,4 +1,10 @@
 <?php
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Plugin_AccessCheck extends Zend_Controller_Plugin_Abstract
 {
 	public function preDispatch(Zend_Controller_Request_Abstract $request)

@@ -1,4 +1,10 @@
 <?php
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Validate_Uri extends Zend_Validate_Abstract
 {
     const MSG_URI = 'msgUri';

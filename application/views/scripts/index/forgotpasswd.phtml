@@ -1,5 +1,16 @@
-<?php $this->headTitle()->append('Forgot Password'); 
-if ($this->escape($this->submitted)) { ?>
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Forgot Password'); 
+
+if ($this->escape($this->submitted)) { 
+
+?>
+
 <h1>New password has been sent</h1>
 <p>A password has been sent to your account email address containing your new password.</p> 
 <p>You may update your password to something more memorable after you log in.</p>

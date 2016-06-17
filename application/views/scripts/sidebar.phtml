@@ -1,5 +1,13 @@
 <ul>
-<?php if ($this->identity == null || $this->identity->role == 'inactive' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'ref' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'register') { ?>
+	
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+if ($this->identity == null || $this->identity->role == 'inactive' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'ref' || Zend_Controller_Front::getInstance()->getRequest()->getActionName() == 'register') { ?>
 
 <li>
 <h2>Why Join?</h2>

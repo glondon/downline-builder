@@ -1,4 +1,10 @@
 <?php
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 class Validate_PasswdVerify extends Zend_Validate_Abstract
 {
 	const NOT_MATCH = 'notMatch';

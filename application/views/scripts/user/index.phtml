@@ -1,8 +1,18 @@
 <?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
 $this->headTitle()->append('Your account');
 $this->headMeta()->appendName('description', 'A downlinebuilder for sign up bonus websites'); 
 $this->headMeta()->appendName('keywords', 'account, sign up bonus, downline builder');
-if ($this->identity == null) { ?>
+
+if ($this->identity == null) { 
+
+?>
+
 <h1>Sign up for an account</h1>
 <p>Bla, bla, bla... <?php echo $this->escape($this->refid) ?></p>
 

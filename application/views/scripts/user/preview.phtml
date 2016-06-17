@@ -1,7 +1,18 @@
-<?php $this->headTitle()->append('Downline Builder'); 
+<?php 
+
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+$this->headTitle()->append('Downline Builder'); 
 $this->headMeta()->appendName('description', 'Sign up bonus sites.'); 
 $this->headMeta()->appendName('keywords', 'sign up bonus, sites'); 
-if ($this->escape($this->submitted)) { ?>
+
+if ($this->escape($this->submitted)) { 
+
+?>
+
 <h1>Your Downline Builder has been updated</h1>
 
 <?php } elseif ($this->escape($this->customSubmit)) { ?>

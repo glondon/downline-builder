@@ -1,10 +1,16 @@
-<?php //echo $this->HeadBanner() ?>
+<?php 
 
-<?php
-		$ra = array(); 
+/*
+* Author: Greg London
+* http://greglondon.info
+*/
+
+//echo $this->HeadBanner();
+
+$ra = array(); 
 		
 		
-		foreach ($this->refIds() as $ref) {
+foreach ($this->refIds() as $ref) {
 		
 if ($ref->hits4pay != '') {
 $ra[] = '<a href="http://hits4pay.com/members/index.cgi?'.$ref->hits4pay.'" target="_blank"><img border="0" src="http://hits4pay.com/imgn/banners/468x60.png" width="468" height="60"></a>';
